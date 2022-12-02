@@ -8,7 +8,7 @@ games = {}
 
 app = flask.Flask(__name__)
 CORS(app)
-#prueba
+#prueba2
 @app.route("/games", methods=["POST"])
 def create():
     global games
