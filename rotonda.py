@@ -322,20 +322,20 @@ class City(Model):
     def step(self):
         self.schedule.step()
 
-def draw(agent):
-    if type(agent) == Light:
-        if agent.color == 1:
-            color = "Red"
-        elif agent.color == 2:
-            color = "Green"
-        elif agent.color == 3:
-            color = "Yellow"
-        return {"Shape": "rect", "w": 0.05, "h": 0.05, "Filled": "true", "Color": color}
-    elif type(agent) == Car:
-        if agent.orientation == agent.RIGHT or agent.orientation == agent.LEFT:
-            return {"Shape": "rect", "w": 0.08, "h": 0.033, "Filled": "true", "Color": "Brown"}
-        else:
-            return {"Shape": "rect", "w": 0.033, "h": 0.08, "Filled": "true", "Color": "Brown"}
+#def draw(agent):
+#    if type(agent) == Light:
+#        if agent.color == 1:
+ #           color = "Red"
+ #       elif agent.color == 2:
+ #           color = "Green"
+ #       elif agent.color == 3:
+ #           color = "Yellow"
+ #       return {"Shape": "rect", "w": 0.05, "h": 0.05, "Filled": "true", "Color": color}
+ #   elif type(agent) == Car:
+ #       if agent.orientation == agent.RIGHT or agent.orientation == agent.LEFT:
+ #           return {"Shape": "rect", "w": 0.08, "h": 0.033, "Filled": "true", "Color": "Brown"}
+ #       else:
+ #           return {"Shape": "rect", "w": 0.033, "h": 0.08, "Filled": "true", "Color": "Brown"}
 
 #canvas = SimpleCanvas(draw, 500, 500)
 
