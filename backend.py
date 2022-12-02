@@ -1,8 +1,9 @@
 import flask
 from flask_cors import CORS
 from flask.json import jsonify
+import json
 import uuid
-import os 
+import os
 from rotonda import *
 
 games = {}
@@ -59,6 +60,5 @@ def queryState(id):
     return jsonify(dictionary)
 
 app.run()
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=port, debug=True)
