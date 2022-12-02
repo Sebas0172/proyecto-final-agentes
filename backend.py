@@ -30,4 +30,7 @@ def queryState(id):
     ghost = model.schedule.agents[0]
     return jsonify({"x": ghost.pos[0], "y": ghost.pos[1]})
 
+    
 app.run()
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=3000, debug=True)
