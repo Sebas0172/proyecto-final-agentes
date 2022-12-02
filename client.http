@@ -1,5 +1,5 @@
 ####
-https://pipeline-final-back-persistent-crocodile.mybluemix.net/games
+post https://pipeline-final-back-persistent-crocodile.mybluemix.net/games
 
 ####
-get https://pipeline-final-back-persistent-crocodile.mybluemix.net/games/bc64cc8a-89e3-4fb8-8a40-57aee1c4f126
+get https://pipeline-final-back-persistent-crocodile.mybluemix.net/games/72ac7521-2181-438c-b15d-9d4b7964cdd4
