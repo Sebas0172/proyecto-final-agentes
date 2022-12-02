@@ -1,5 +1,5 @@
 ####
-post http://127.0.0.1:5000/games
+https://pipeline-final-back-persistent-crocodile.mybluemix.net/games
 
 ####
-get http://127.0.0.1:5000/games/5bf5ff4c-d6fa-4b0f-9279-900cf1945fe5
+get https://pipeline-final-back-persistent-crocodile.mybluemix.net/games/bc64cc8a-89e3-4fb8-8a40-57aee1c4f126
