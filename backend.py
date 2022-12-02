@@ -11,7 +11,7 @@ games = {}
 app = flask.Flask(__name__)
 CORS(app)
 
-port = int(os.getenv('PORT', 8000))
+port = int(os.getenv('PORT', 5000))
 
 @app.route('/')
 def root():
