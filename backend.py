@@ -15,7 +15,7 @@ port = int(os.getenv('PORT', 8000))
 
 @app.route('/')
 def root():
-    return jsonify ([{"message" : "Hola, desde IBM Cloud, por favor funciona!!"}])
+    return jsonify ([{"message" : "Hola, desde IBM Cloud, por favor funciona!"}])
 
 
 @app.route("/games", methods=["POST"])
