@@ -3,7 +3,7 @@ from flask_cors import CORS
 from flask.json import jsonify
 import uuid
 import os 
-from rotonda import City , Car , Light
+from rotonda import *
 
 games = {}
 
@@ -14,7 +14,7 @@ port = int(os.getenv('PORT', 8000))
 
 @app.route('/')
 def root():
-    return jsonify ([{"message" : "Hola, desde IBM Cloud, por favor funciona!"}])
+    return jsonify ([{"message" : "Hola, desde IBM Cloud, por favor funciona!!"}])
 
 
 @app.route("/games", methods=["POST"])
