@@ -1,0 +1,116 @@
+	//INTERSECTION
+	var inter = new THREE.Object3D(); 
+	mtlLoader2.setMaterialOptions( { side: THREE.DoubleSide } );
+    mtlLoader2.load(
+        'http://localhost:3000/models/intersection.mtl',
+        (materials) => {
+            materials.preload()
+            const objLoader = new OBJLoader()
+            objLoader.setMaterials(materials)
+            objLoader.load(
+                'http://localhost:3000/models/intersection.obj',
+                (object) => {
+					inter.add(object)
+                  	inter.scale.setScalar(31.3660662248)
+                  	inter.position.set(0, 0, 0)
+				  	//var boxVector = new THREE.Vector3();
+					//var box = new THREE.Box3().setFromObject(inter);
+  					//box.getSize(boxVector);
+  					//console.log(boxVector.x);
+					//console.log(boxVector.y);
+					//console.log(boxVector.z);
+                  	scene.add(inter)
+                },
+                (xhr) => {console.log((xhr.loaded / xhr.total) * 100 + '% loaded')},
+                (error) => {console.log('An error happened')}
+            )
+        },
+        (xhr) => {console.log((xhr.loaded / xhr.total) * 100 + '% loaded')},
+        (error) => {console.log('An error happened')}
+    )
+
+	//CAR
+	var car = new THREE.Object3D(); 
+    mtlLoader.load(
+        'http://localhost:3000/models/car.mtl',
+        (materials) => {
+            materials.preload()
+            const objLoader = new OBJLoader()
+            objLoader.setMaterials(materials)
+            objLoader.load(
+                'http://localhost:3000/models/car.obj',
+                (object) => {
+					car.add(object)
+                  	car.scale.setScalar(0.049518799988)
+                  	car.position.set(35, 14.8, -135)
+				  	//var boxVector = new THREE.Vector3();
+					//var box = new THREE.Box3().setFromObject(car);
+  					//box.getSize(boxVector);
+  					//console.log(boxVector.x);
+					//console.log(boxVector.y);
+					//console.log(boxVector.z);
+                  	scene.add(car)
+                },
+                (xhr) => {console.log((xhr.loaded / xhr.total) * 100 + '% loaded')},
+                (error) => {console.log('An error happened')}
+            )
+        },
+        (xhr) => {console.log((xhr.loaded / xhr.total) * 100 + '% loaded')},
+        (error) => {console.log('An error happened')}
+    )
+
+	//TRAFFIC LIGHT
+	var tLight = new THREE.Object3D(); 
+    mtlLoader.load(
+        'http://localhost:3000/models/trafficLight.mtl',
+        (materials) => {
+            materials.preload()
+            const objLoader = new OBJLoader()
+            objLoader.setMaterials(materials)
+            objLoader.load(
+                'http://localhost:3000/models/trafficLight.obj',
+                (object) => {
+					tLight.add(object)
+                  	tLight.scale.setScalar(0.04924245839)
+                  	tLight.position.set(-80,0,-200)
+                  	scene.add(tLight)
+                },
+                (xhr) => {console.log((xhr.loaded / xhr.total) * 100 + '% loaded')},
+                (error) => {console.log('An error happened')}
+            )
+        },
+        (xhr) => {console.log((xhr.loaded / xhr.total) * 100 + '% loaded')},
+        (error) => {console.log('An error happened')}
+    )
+
+	//AVOCADO PEOPLE
+	var avocado = new THREE.Object3D(); 
+    mtlLoader.load(
+        'http://localhost:3000/models/avocado.mtl',
+        (materials) => {
+            materials.preload()
+            const objLoader = new OBJLoader()
+            objLoader.setMaterials(materials)
+            objLoader.load(
+                'http://localhost:3000/models/avocado.obj',
+                (object) => {
+					avocado.add(object)
+                  	avocado.scale.setScalar(49)
+                  	avocado.position.set(35, 17.5, -133)
+					avocado.rotateY(3.14159)
+                  	scene.add(avocado)
+                },
+                (xhr) => {console.log((xhr.loaded / xhr.total) * 100 + '% loaded')},
+                (error) => {console.log('An error happened')}
+            )
+        },
+        (xhr) => {console.log((xhr.loaded / xhr.total) * 100 + '% loaded')},
+        (error) => {console.log('An error happened')}
+    )
+
+
+light3.position.set(0, 200, 60);
+light3.target.position.set(0, 1, -500);
+const light4 = new THREE.DirectionalLight(0x404040, 1);
+light.position.set(0, 200, -60);
+light4.target.position.set(0, 1, 500);
