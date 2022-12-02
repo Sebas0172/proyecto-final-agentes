@@ -1,3 +1,4 @@
 Flask>=2.2.2
 Flask-Cors>=3.0.10
 Mesa>=1.1.1
+Dijkstar>=2.6.0
