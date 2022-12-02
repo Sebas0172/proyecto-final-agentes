@@ -1,4 +1,8 @@
 ---
 applications:
- - name: agentes-server
+ - name: backend-final
    random-route: true
+   buildpacks:
+   - python_buildpack
+   command: python3 backend.py
+   PORT: 5000

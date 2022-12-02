@@ -2,18 +2,26 @@ import flask
 from flask_cors import CORS
 from flask.json import jsonify
 import uuid
-from pacman import Maze
+import os 
+from rotonda import City , Car , Light
 
 games = {}
 
 app = flask.Flask(__name__)
 CORS(app)
-#prueba2
+
+port = int(os.getenv('PORT', 8000))
+
+@app.route('/')
+def root():
+    return jsonify ([{"message" : "Hola, desde IBM Cloud"}])
+
+
 @app.route("/games", methods=["POST"])
 def create():
     global games
     id = str(uuid.uuid4())
-    games[id] = Maze()
+    games[id] = City()
 
     response = jsonify("ok")
     response.status_code = 201
@@ -27,10 +35,27 @@ def queryState(id):
     global model
     model = games[id]
     model.step()
-    ghost = model.schedule.agents[0]
-    return jsonify({"x": ghost.pos[0], "y": ghost.pos[1]})
+    dictionary = {}
+    cars = []
+    lights = []
+    for agent in model.schedule.agents:
+        if type(agent) is Car:
+            car = dict()
+            car["id"] = agent.unique_id
+            car["x"] = agent.pos[0]
+            car["y"] = agent.pos[1]
+            car["orient"] = agent.orientation
+            cars.append(car)
 
-    
+        elif type(agent) is Light:
+            light = dict()
+            light["id"] = agent.unique_id
+            light["color"] = agent.color
+            lights.append(light)
+
+    dictionary["cars"] = cars
+    dictionary["lights"] = lights
+
+    return jsonify(dictionary)
+
 app.run()
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=3000, debug=True)
