@@ -337,10 +337,10 @@ def draw(agent):
         else:
             return {"Shape": "rect", "w": 0.033, "h": 0.08, "Filled": "true", "Color": "Brown"}
 
-canvas = SimpleCanvas(draw, 500, 500)
+#canvas = SimpleCanvas(draw, 500, 500)
 
-model_params = {}
+#model_params = {}
 
-server = ModularServer(City, [canvas], "City Model", model_params)
-server.port = 8522
-server.launch()
+#server = ModularServer(City, [canvas], "City Model", model_params)
+#server.port = 8522
+#server.launch()
